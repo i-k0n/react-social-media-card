@@ -1,39 +1,39 @@
 import React from 'react'
 
-export const Card = () => {
+export const Card = (props) => {
     return (
-        <li class="card">
-          <div class="card__header">
-            <img class="card__profile-img" src="https://www.syfy.com/sites/syfy/files/styles/1200x680/public/syfywire_cover_media/2018/09/c-3po-see-threepio_68fe125c.jpg" alt="c3po"/>
-            <div class="card__meta">
-              <div class="card__meta__displayname">
-                C-3PO
+        <li className="card">
+          <div className="card__header">
+            <img className="card__profile-img" src={props.data.profileImg} alt="c3po"/>
+            <div className="card__meta">
+              <div className="card__meta__displayname">
+                {props.data.displayName}
               </div>
-              <div class="card__meta__username">
-                @humancyborgrelations
+              <div className="card__meta__username">
+                @{props.data.userName}
               </div>
-              <div class="card__meta__timestamp">
-                1 day ago
+              <div className="card__meta__timestamp">
+                {props.data.timeStamp}
               </div>
             </div>
-            <div class="card__menu">
-              <i class="fas fa-ellipsis-h"></i>
+            <div className="card__menu">
+              <i className="fas fa-ellipsis-h"></i>
             </div>
           </div>
           
-          <div class="card__body">
-            I have a bad feeling about this!
+          <div className="card__body">
+            {props.data.message}
           </div>
           
-          <div class="card__footer">
-            <span class="card__footer__like">
-              <i class="far fa-heart"></i> 13
+          <div className="card__footer">
+            <span className="card__footer__like">
+              <i className="far fa-heart"></i> {props.data.likes}
             </span>
-            <span class="card__footer__comment">
-              <i class="far fa-comment"></i> 2
+            <span className="card__footer__comment">
+              <i className="far fa-comment"></i> {props.data.comments}
             </span>
-            <span class="card__footer__share">
-              <i class="fas fa-share-alt"></i>
+            <span className="card__footer__share">
+              <i className="fas fa-share-alt"></i>
             </span>
           </div>
         </li>
